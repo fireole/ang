@@ -1,0 +1,22 @@
+﻿
+Hello
+
+
+
+<div class="row" data-ng-controller="HomeController as vm">
+    
+    <P>Name: <input type="text" ng-model="vm.user.firstName" ng-change="vm.updateName(vm.user.firstName)"></P>
+    <p>Body Weight: <input type="text" ng-model="vm.user.currentStat.bw" ng-change="vm.updateStatsByBw(vm.user.currentStat.bw)" /></p>
+    <p>Body Fat %: <input type="text" ng-model="vm.user.currentStat.bfp" ng-change="vm.updateStatsByBfp(vm.user.currentStat.bfp)" /></p>
+
+    <p>Lean Body Mass: <span ng-bind="vm.user.currentStat.lbm"></span></p>
+    <p>Body Fat: <span ng-bind="vm.user.currentStat.fw"></span></p>
+
+
+    <hr/>
+    <pre>{{ vm.mealName | json }}</pre>
+    <hr/>
+    <pre>{{ vm.user | json }}</pre>
+</div>
+
+
