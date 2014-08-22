@@ -41,9 +41,10 @@
         }
 
         public calcMacros() {
-
-            Enumerable.From(this.mealPlans).ForEach(m=>  m.ForEach(mm=>mm.macros.calculateGrams(this.currentStat.lbm * 10, 11)));
-//            this.mealPlans[0].macros[0].calculateGrams(this.currentStat.lbm, 11);
+            Enumerable.From(this.mealPlans).ForEach((m) => {
+                Enumerable.From(m.macros).ForEach(mm => mm.calculateGrams(this.currentStat.lbm * m.multiplier));
+                m.calculateTotalCalories();
+            });
         }
     }
 }

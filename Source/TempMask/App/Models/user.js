@@ -35,11 +35,11 @@
         User.prototype.calcMacros = function () {
             var _this = this;
             Enumerable.From(this.mealPlans).ForEach(function (m) {
-                return m.ForEach(function (mm) {
-                    return mm.macros.calculateGrams(_this.currentStat.lbm * 10, 11);
+                Enumerable.From(m.macros).ForEach(function (mm) {
+                    return mm.calculateGrams(_this.currentStat.lbm * m.multiplier);
                 });
+                m.calculateTotalCalories();
             });
-            //            this.mealPlans[0].macros[0].calculateGrams(this.currentStat.lbm, 11);
         };
         return User;
     })();
