@@ -12,13 +12,12 @@
                 'angularServices'
             ])
                 .config([
-                    '$compileProvider',
-                    ($compileProvider) => {
+                    '$compileProvider', '$locationProvider', ($compileProvider, $locationProvider) => {
                         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sip):/);
-                    }
-                ]);
+                        $locationProvider.html5Mode(true);
+                    }]);
 
-            this.defaultRoute('/');
+            //this.defaultRoute('/');
             this.app.run(() => {});
         }
 

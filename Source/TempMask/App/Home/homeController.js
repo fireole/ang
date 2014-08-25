@@ -26,5 +26,5 @@
 })(Home || (Home = {}));
 
 app.registerController(Home.HomeController);
-app.registerRoute('/', Home.HomeController, 'app/Home/home.html');
+app.registerRoute('/stuff', Home.HomeController, 'app/Home/home.html');
 //# sourceMappingURL=homeController.js.map

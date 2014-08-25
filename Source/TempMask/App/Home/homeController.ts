@@ -31,4 +31,4 @@
 }
 
 app.registerController(Home.HomeController);
-app.registerRoute('/', Home.HomeController, 'app/Home/home.html'); 
+app.registerRoute('/stuff', Home.HomeController, 'app/Home/home.html'); 
